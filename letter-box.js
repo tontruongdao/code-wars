@@ -1,4 +1,4 @@
-const paintLetterBoxes = () => {
+const paintLetterBoxes = (startNumber, endNumber) => {
 
   console.log("hello world")
   return ("hello world")
@@ -6,35 +6,45 @@ const paintLetterBoxes = () => {
 
 // paintLetterBoxes();
 
-const num = 123456;
 
 // Convert a number to an array.
-const numArray = String(num).split("").map((num) => Number(num));
+const num = 123456;
 
+const numArray = String(num).split("").map((int) => Number(int));
+// console.log(numArray);
+
+
+// Creating a number range
+const rangeArray = [];
 let start = 100;
 let end = 105;
 
-const rangeArray = [];
-
 while(start <= end) {
   rangeArray.push(start);
-  // console.log(rangeArray);
   start++;
 }
+// console.log(rangeArray);
 
-// console.log(numArray);
 
-const dummyNumber = [1, 2, 3, 1];
+
+// Making a number Map(object)
+const numberMap = {};
+const dummyNumber = [19, 200, 3018, 14];
 // console.log(dummyNumber)
 
-const numberMap = {};
-
+// Iterating through each digit to record in number map.
 for (const num of dummyNumber){
-  if(numberMap[num]) {
-    numberMap[num] ++
-  } else {
-    numberMap[num] = 1
-  }
-}
+  const numArr = String(num).split("").map((int) => Number(int))
 
-console.log(numberMap)
+  numArr.forEach((int) => {
+    if(numberMap[int]) {
+      numberMap[int] ++
+    } else {
+      numberMap[int] = 1
+    }
+  })
+}
+// console.log(numberMap)
+
+
+// Making a number Map(array)
