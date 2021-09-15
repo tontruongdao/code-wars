@@ -1,5 +1,8 @@
 const fruitsArr = ["banana", "orange", "pear"]
 const tempArr = []
+const tempObj = {
+  
+}
 
 // if (fruitsArr.includes("orange")) {
 //   console.log("array includes orange")
@@ -12,5 +15,11 @@ const tempArr = []
 // console.log("fruitsArr:", fruitsArr)
 // console.log("tempArr is:", tempArr)
 
-const filteredArr = fruitsArr.filter((fruit) => fruit === "orange")
-console.log(filteredArr)
+// const filteredArr = fruitsArr.filter((fruit) => fruit === "orange")
+// console.log(filteredArr)
+
+fruitsArr.forEach((fruit, idx) => (
+  tempObj[idx] = fruit
+))
+
+console.log(tempObj)
