@@ -7,5 +7,7 @@ const tempFunction = (num) => {
         sum = sum + tempIndex
         console.log(num, sum)
     }
+    
+    return sum
 }
 tempFunction(25)
