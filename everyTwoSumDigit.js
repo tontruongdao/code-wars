@@ -8,6 +8,13 @@
 // [ 3, 4, 5, 6, 5, 6, 7, 7, 8, 9 ]
 
 
-function digits(num) {
-  
+const test = [1, 2, 3, 4]
+
+function digits(numArr){
+    const finalArr = [];
+    numArr.forEach((num, index) => {
+        while(index < numArr.lenght)    console.log(num, index)
+    })
 }
+
+digits(test)
