@@ -12,13 +12,19 @@ coinCombo(6) --> [1, 1, 0, 0]
 */
 
 const coinCombo = (cents) => {
-  const [penny, nickel, dime, quarter] = [1, 5, 10, 25];
+  let totalCents = cents;
+  const coinArr = [25, 10, 5, 1];
+  const resultArr = new Array(4).fill(0)
 
-  const qrtInt = Math.floor(cents / quarter, 0);
-  const qrtRemainder = cents % quarter;
+  coinArr.forEach((coin, index) => {
+    const coinInt = Math.floor(totalCents / coin, 0);
+    const coinRemainder = totalCents % coin;
 
-  console.log("qrt int is ", qrtInt);
-  console.log("qrt remainder is ", qrtRemainder);
+    resultArr[index] = coinInt;
+    totalCents = coinRemainder;
+  })
+
+  return resultArr.reverse()
 }
 
 coinCombo(120)
