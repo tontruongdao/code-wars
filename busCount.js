@@ -8,13 +8,27 @@ Please keep in mind that the test cases ensure that the number of people in the 
 The second value in the first integer array is 0, since the bus is empty in the first bus stop.
 */
 
+const countBusPassengers = (busStops) => busStops.reduce((previousValue, [passengerIn, passengerOut]) => previousValue + passengerIn - passengerOut, 0);
 
-const countBusPassengers = (busStops) => {
-  let flattened = busStops.reduce(
-    ( previousValue, currentValue ) => [...previousValue, ...currentValue],
-    []
-  )
-  console.log("flat", flattened)
-}
+// My Solution
+// const countBusPassengers = (busStops) => {
+//   const flattened = busStops.reduce(
+//     ( previousValue, currentValue ) => [...previousValue, ...currentValue],
+//     []
+//   )
 
-console.log(countBusPassengers([[0, 1], [2, 3], [4, 5]]))
+//   const totalSum = flattened.reduce((previousValue, currentValue, currentIndex) => {
+//     let busStopCount;
+//     if (currentIndex % 2 === 0) {
+//       busStopCount = previousValue + currentValue
+//     } else {
+//       busStopCount = previousValue - currentValue
+//     }
+
+//     return busStopCount;
+//   }, 0)
+
+//   return totalSum;
+// }
+
+console.log(countBusPassengers([[10, 0], [3, 5], [4, 6]]))
