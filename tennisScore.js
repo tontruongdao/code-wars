@@ -19,11 +19,47 @@ There's an additional rule to remember: when players are tied by one or two poin
 It's guaranteed that no more than 5 points have been won so far, and the game is not over yet. It is also guaranteed that at least one point has been won.
 */
 
-const tennisGamePoints = (scoreStr) => {
-  const [love, all] = ["love", "all"]
-  console.log("scoreStr ---> ", scoreStr)
+// CW Solution
+
+function tennisGamePoints(score) {
+  //coding and coding..
+  const codes = {
+    "love": 0,
+    "15": 1,
+    "30": 2,
+    "40": 3
+  }
   
-  
+  const scores = score.split('-');
+  const p1 = codes[scores[0]];
+  const p2 = scores[1] === 'all' ? p1 : codes[scores[1]];
+  return p1 + p2;
 }
 
-tennisGamePoints("15-40")
+
+// My Solution
+
+// const tennisGamePoints = (scoreStr) => {
+//   const getPoints = (score) => {
+//     if (score === "40") {
+//       return 3
+//     } else if (score === "30") {
+//       return 2
+//     } else if (score === "15") {
+//       return 1
+//     } else if (score === "love") {
+//       return 0
+//     }
+//     return
+//   }
+
+//   const [firstScore, secondScore] = scoreStr.split("-")
+
+//   const firstPoints = !!getPoints(firstScore) || getPoints(firstScore) === 0 ? getPoints(firstScore) : getPoints(secondScore)
+//   const secondPoints = !!getPoints(secondScore) || getPoints(secondScore) === 0 ? getPoints(secondScore) : getPoints(firstScore)
+
+//   console.log(firstPoints + secondPoints)
+//   return firstPoints + secondPoints
+// }
+
+// tennisGamePoints("30-all")
