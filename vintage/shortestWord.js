@@ -15,7 +15,7 @@ const findShort = (s) => {
   let shortestWord = words[0]
   words.forEach((word) => {
     if (shortestWord.length > word.length) {
-      console.log("word", word)
+      // console.log("word", word)
       shortestWord = word
     }
   })
@@ -24,3 +24,5 @@ const findShort = (s) => {
 
 const test = "Thee quick brown fox jumps over the lazy dog."
 findShort(test)
+const num = [1, 2, 3]
+console.log("array test ---> ", ...num)
