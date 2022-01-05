@@ -4,10 +4,11 @@ Implement a function that determines whether a string that contains only letters
 Assume the empty string is an isogram. Ignore letter case.
 */
 
-
 // CW Solution
 
 function isIsogram(str) {
+  const set = new Set(str.toUpperCase()).size
+  console.log("---> set ,", typeof (set))
   return new Set(str.toUpperCase()).size == str.length;
 }
 
@@ -38,7 +39,7 @@ function isIsogram(str) {
 //   return isIso;
 // }
 
-const test = "Dermatoglyphics"
+const test = "aba"
 
 // assert.strictEqual( isIsogram("Dermatoglyphics"), true );
 // assert.strictEqual( isIsogram("isogram"), true );
