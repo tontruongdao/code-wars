@@ -8,49 +8,53 @@
 // and returns the minimal amount of people needed 
 // to perform these handshakes (a pair of farmers handshake only once).
 
+
+// CW Solition
 const getParticipants = (handshakes: number): number => {
-  let binomialConst = 1;
-  let minHandshakes = 0;
-
-  const binFactors: number[] = [1, 1]
-
-  const factorial = (num: number): number => {
-    console.log("all factors are --->", binFactors)
-    if (num < 0) {
-      return 1
-    } else if (!binFactors[num]) {
-      binFactors[num] = num * factorial(num - 1)
-    }
-
-    console.log("bin factor is", binFactors[num])
-    return binFactors[num]
+  let n: number = 1;
+  while (handshakes > (n * (n - 1)) / 2) {
+    ++n;
   }
 
-  while (handshakes > minHandshakes) {
-    //   const numerator = 1
-    //   const firstDenominator = 1
-    //   const secondDenominator = 1
-
-    //   const newBinomialConst = (numerator / (firstDenominator * secondDenominator))
-    minHandshakes += 1
-    console.log("min handshake ---> ", minHandshakes)
-  }
-  return binomialConst
+  return n;
 }
 
-// const result = getParticipants(10)
-// console.log("result is ---->", result)
+// My Solution
+// const factorial = (num: number): number => {
+//   const factors: number[] = [1, 1];
 
-const factors: number[] = [1, 1]
+//   if (num < 0 || num === 0 || num === 1) {
+//     return factors[0];
+//   } else if (!factors[num]) {
+//     for (let i = 2; i <= num; i++) {
+//       if (!factors[i]) {
+//         factors.push(factors[i - 1] * i)
+//       }
+//     }
+//   }
 
-const factorial = (num: number): number => {
-  if (num < 0)
-    return -1;
-  else if (num == 0)
-    return 1;
-  else {
-    return (num * factorial(num - 1));
-  }
-}
+//   return factors[num]
+// }
 
-factorial(5)
+// const getParticipants = (handshakes: number): number => {
+//   let minParticipants = 1;
+//   let minHandshakes = 0;
+
+//   while (handshakes > minHandshakes) {
+//     minParticipants += 1
+
+//     if (minParticipants === 2) {
+//       minHandshakes = 1
+//     } else if (minParticipants > 2) {
+//       const numerator = factorial(minParticipants)
+//       const firstDenominator = factorial(2)
+//       const secondDenominator = factorial(minParticipants - 2)
+
+//       minHandshakes = (numerator / (firstDenominator * secondDenominator))
+//     }
+//   }
+//   return minParticipants
+// }
+
+const result = getParticipants(711)
+console.log("---> result", result)
