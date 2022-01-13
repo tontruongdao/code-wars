@@ -12,14 +12,18 @@ const getParticipants = (handshakes: number): number => {
   let binomialConst = 1;
   let minHandshakes = 0;
 
-  const binFactors: number[] = []
+  const binFactors: number[] = [1, 1]
 
   const factorial = (num: number): number => {
-    if (num < 0 || num == 0)
-      return 1;
-    else {
-      return (num * factorial(num - 1));
+    console.log("all factors are --->", binFactors)
+    if (num < 0) {
+      return 1
+    } else if (!binFactors[num]) {
+      binFactors[num] = num * factorial(num - 1)
     }
+
+    console.log("bin factor is", binFactors[num])
+    return binFactors[num]
   }
 
   while (handshakes > minHandshakes) {
