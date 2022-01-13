@@ -41,6 +41,8 @@ const getParticipants = (handshakes: number): number => {
 // const result = getParticipants(10)
 // console.log("result is ---->", result)
 
+const factors: number[] = [1, 1]
+
 const factorial = (num: number): number => {
   if (num < 0)
     return -1;
