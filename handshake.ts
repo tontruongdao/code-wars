@@ -40,3 +40,15 @@ const getParticipants = (handshakes: number): number => {
 
 // const result = getParticipants(10)
 // console.log("result is ---->", result)
+
+const factorial = (num: number): number => {
+  if (num < 0)
+    return -1;
+  else if (num == 0)
+    return 1;
+  else {
+    return (num * factorial(num - 1));
+  }
+}
+
+factorial(5)
