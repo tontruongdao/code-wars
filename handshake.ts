@@ -56,5 +56,4 @@ const getParticipants = (handshakes: number): number => {
 //   return minParticipants
 // }
 
-const result = getParticipants(711)
-console.log("---> result", result)
+console.log("---> result", getParticipants(711))
