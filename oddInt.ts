@@ -13,39 +13,32 @@ interface ICharMap {
   [name: string]: number;
 }
 
-const findOdd = (numArr: number[]) => {
-  // let result = 1
-  const charMap: ICharMap = {}
-  numArr.forEach(num => {
-    if (!charMap[num]) {
-      charMap[num] = 1;
-    } else if (typeof (charMap[num]) === "number") {
-      charMap[num]++;
-    }
-  })
+// CW Solution
+const findOdd = (numbers: number[]): number => {
+  return numbers.reduce((acc, x) => {
+    console.log("x is", x)
+    console.log("acc is", x)
+    console.log("result is", x ^ acc)
+    return (x ^ acc)
+  }, 0);
+};
 
-  // console.log("charMap is ----> ", charMap)
-  const charMapArr = Object.entries(charMap)
+// my solution
+// const findOdd = (numArr: number[]) => {
+//   const charMap: ICharMap = {}
+//   numArr.forEach(num => {
+//     if (!charMap[num]) {
+//       charMap[num] = 1;
+//     } else {
+//       charMap[num]++;
+//     }
+//   })
 
-  // const oddEntry = charMapArr.find(entry => {
-  //   entry[1] % 2 === 1
-  // })
-  charMapArr.forEach(entry => {
-    if (entry[1] % 2 === 1) {
-      console.log("entry is", entry)
-    }
-  })
+//   const charMapArr = Object.entries(charMap)
+//   const findOne = charMapArr.find(entry => entry[1] % 2 === 1)
 
-  const findOne = charMapArr.find(entry => entry[1] === 1)
+//   return !!findOne ? parseInt(findOne[0], 10) : 0
+// }
 
-  console.log("char map arr", charMapArr)
-
-  // if (oddEntry) {
-  //   console.log("odd entry ---> ", oddEntry[0])
-  // }
-
-  // return oddEntry ? oddEntry[0] : 1
-}
-
-const test = [0, 2, 0, 5, 5, 5, 6, 7, 8];
-const result = findOdd(test)
+const test = [20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5];
+console.log(findOdd(test))
