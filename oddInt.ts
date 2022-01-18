@@ -40,5 +40,5 @@ const findOdd = (numbers: number[]): number => {
 //   return !!findOne ? parseInt(findOne[0], 10) : 0
 // }
 
-const test = [20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5];
-console.log(findOdd(test))
+// const test = [20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5];
+// console.log(findOdd(test))
